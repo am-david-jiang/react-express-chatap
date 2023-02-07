@@ -1,0 +1,52 @@
+// Dispaly Text Classes
+@mixin display-lg {
+  font-size: 3rem;
+  line-height: 1.25;
+  letter-spacing: -2%;
+}
+
+@mixin display-xs {
+  font-size: 1.5rem;
+  line-height: 1.333;
+  letter-spacing: 0;
+}
+
+@mixin text-sm {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+@mixin text-md {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@mixin text-lg {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@mixin text-xl {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+// Font utils
+@mixin weight-regular {
+  font-weight: 400;
+}
+@mixin weight-medium {
+  font-weight: 500;
+}
+@mixin weight-semibold {
+  font-weight: 600;
+}
+
+// Font Family
+@mixin sans-serif {
+  font-family: "Inter", sans-serif;
+}

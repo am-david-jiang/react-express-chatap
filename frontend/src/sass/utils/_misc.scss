@@ -1,0 +1,9 @@
+@mixin center-items {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fullwindow-size {
+  width: 100vw;
+  height: 100vh;
+}

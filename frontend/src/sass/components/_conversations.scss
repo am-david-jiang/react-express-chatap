@@ -1,0 +1,36 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+.conversations {
+  flex: 1;
+  overflow: auto;
+  background-color: Color.$blue-25;
+  border-right: 1px solid Color.$blue-200;
+  width: 100%;
+}
+
+.conversation {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($color: Color.$blue-25, $amount: 10);
+    cursor: pointer;
+  }
+
+  img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+  }
+
+  h3 {
+    @include Text.text-lg;
+    @include Text.weight-medium;
+  }
+}

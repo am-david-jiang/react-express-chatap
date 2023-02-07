@@ -1,0 +1,36 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: Color.$blue-600;
+  padding: 1.125rem 1rem;
+
+  &-user {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  &-actions {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  &-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+  }
+
+  &-username {
+    @include Text.weight-semibold;
+    @include Text.text-xl;
+    color: Color.$white;
+  }
+}

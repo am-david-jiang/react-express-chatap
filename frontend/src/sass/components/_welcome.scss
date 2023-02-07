@@ -1,0 +1,25 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+.welcome {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  @include Text.sans-serif;
+
+  &-img {
+    height: 300px;
+    width: auto;
+  }
+
+  &-intro {
+    @include Text.display-xs;
+    @include Text.weight-medium;
+    color: Color.$gray-400;
+    text-align: center;
+  }
+}

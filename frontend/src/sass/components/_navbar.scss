@@ -1,0 +1,20 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+@mixin navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  img {
+    display: block;
+    height: 32px;
+  }
+
+  a {
+    @include Text.text-lg;
+    @include Text.weight-semibold;
+    color: Color.$blue-600;
+  }
+}

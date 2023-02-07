@@ -1,0 +1,31 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+@mixin button(
+  $background-color: Color.$blue-600,
+  $foreground-color: Color.$white,
+  $is-block: true
+) {
+  @if $is-block {
+    display: block;
+  } @else {
+    display: inline;
+  }
+  @include Text.sans-serif;
+  text-align: center;
+  padding: 0.625rem 1.125rem;
+  border: none;
+  border-radius: 8px;
+  color: $foreground-color;
+  background-color: $background-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    @if lightness($background-color) < 50% {
+      background-color: lighten($color: $background-color, $amount: 10);
+    } @else {
+      background-color: darken($color: $background-color, $amount: 10);
+    }
+  }
+}

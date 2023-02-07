@@ -1,0 +1,56 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+.message {
+  display: flex;
+  gap: 1rem;
+
+  &-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  &-bubble {
+    background-color: Color.$gray-300;
+    color: Color.$gray-900;
+    padding: 0.625rem 1rem;
+    border-radius: 0 8px 8px 8px;
+    @include Text.text-md;
+    @include Text.weight-regular;
+    max-width: 20em;
+  }
+
+  &-date {
+    @include Text.text-sm;
+    @include Text.weight-medium;
+    color: Color.$gray-500;
+  }
+
+  &-sender {
+    align-self: flex-end;
+  }
+
+  &-sender &-avatar {
+    order: 1;
+  }
+
+  &-sender &-content {
+    order: 0;
+    align-items: flex-end;
+  }
+
+  &-sender &-bubble {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 0px;
+    background-color: Color.$blue-600;
+    color: Color.$white;
+  }
+}

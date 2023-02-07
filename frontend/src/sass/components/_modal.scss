@@ -1,0 +1,110 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+
+@use "../components/button";
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-box {
+  @include Text.sans-serif;
+  width: 600px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.modal-title {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: Color.$blue-600;
+
+  h3 {
+    @include Text.text-xl;
+    @include Text.weight-semibold;
+    color: Color.$white;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-content {
+  padding: 1rem;
+  background-color: Color.$blue-75;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    @include Text.text-sm;
+    @include Text.weight-regular;
+    color: Color.$gray-800;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid Color.$gray-300;
+    border-radius: 8px;
+    outline: none;
+    padding: 0.625rem 0.875rem;
+    @include Text.sans-serif;
+    @include Text.text-sm;
+    @include Text.weight-regular;
+
+    &::placeholder {
+      color: Color.$gray-500;
+    }
+
+    &:focus {
+      border-color: Color.$gray-700;
+    }
+  }
+}
+
+.modal-action {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+
+  .modal-cancel {
+    order: 0;
+    @include button.button(Color.$white, #121212);
+    @include Text.weight-semibold;
+    @include Text.text-md;
+  }
+
+  .modal-add {
+    order: 1;
+    @include button.button();
+    @include Text.weight-semibold;
+    @include Text.text-md;
+  }
+}

@@ -1,0 +1,10 @@
+@mixin full-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+@mixin full-grid-no-gap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}

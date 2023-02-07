@@ -1,0 +1,73 @@
+@use "../utils/color" as Color;
+@use "../utils/typography" as Text;
+@use "../utils/grid" as Grid;
+@use "../utils/misc" as Misc;
+
+@use "../components/button";
+@use "../components/navbar";
+@use "../components/background";
+@use "../components/form-input" as input;
+
+.register {
+  @include Misc.fullwindow-size;
+  @include Text.sans-serif;
+  @include Grid.full-grid;
+
+  &-container {
+    order: 2;
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-navbar {
+    @include navbar.navbar;
+  }
+
+  &-form {
+    width: 400px;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    h3 {
+      @include Text.display-lg;
+      @include Text.weight-semibold;
+      color: Color.$gray-800;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      @include Text.text-sm;
+      @include Text.weight-medium;
+      color: Color.$gray-500;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      @include Text.text-sm;
+      @include Text.weight-medium;
+      color: Color.$blue-600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 75%;
+      @include input.single-line-input;
+    }
+
+    button {
+      @include button.button(Color.$rose-700);
+      margin-top: 2rem;
+      width: 75%;
+      @include Text.text-md;
+      @include Text.weight-semibold;
+    }
+  }
+
+  &-background {
+    order: 1;
+    grid-column: span 7;
+    @include background.background("../../assets/png/background-sign-up.png");
+  }
+}
